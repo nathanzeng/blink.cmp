@@ -292,6 +292,7 @@ function sources.get_lsp_capabilities(override, include_nvim_defaults)
   return vim.tbl_deep_extend('force', include_nvim_defaults and vim.lsp.protocol.make_client_capabilities() or {}, {
     textDocument = {
       completion = {
+        dynamicRegistration = false,
         completionItem = {
           snippetSupport = true,
           commitCharactersSupport = false, -- TODO:
